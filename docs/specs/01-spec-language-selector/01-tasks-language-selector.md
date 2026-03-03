@@ -63,7 +63,7 @@ Make all tests pass by adding the translated message keys to `messages_es.proper
 - [x] 2.6 Run `./mvnw test` (full Java suite) and verify no regressions. Pay attention to `checkNonInternationalizedStrings` — if it flags bare text in the new markup, ensure all visible text uses `th:text` or has `th:remove="all"`.
 - [x] 2.7 Run `cd e2e-tests && npm test` (full E2E suite) and verify no regressions in existing specs.
 
-### [ ] 3.0 Verification, Screenshots, and PR Readiness
+### [x] 3.0 Verification, Screenshots, and PR Readiness
 
 Run the complete verification suite, capture proof screenshots, perform a manual accessibility check, and prepare the commit with conventional format.
 
@@ -77,11 +77,11 @@ Run the complete verification suite, capture proof screenshots, perform a manual
 
 #### 3.0 Tasks
 
-- [ ] 3.1 Create the proof artifacts directory: `docs/specs/01-spec-language-selector/01-proofs/`
-- [ ] 3.2 Start the application (`./mvnw spring-boot:run`) and capture a screenshot of the home page in English (default state, showing the language selector with "EN" and globe icon). Save to `docs/specs/01-spec-language-selector/01-proofs/home-en.png`.
-- [ ] 3.3 Switch to Spanish (`?lang=es`) and capture a screenshot of the home page showing the language selector with "ES" and Spanish nav text. Save to `docs/specs/01-spec-language-selector/01-proofs/home-es.png`.
-- [ ] 3.4 Verify the dropdown at 320px viewport width (browser devtools) — confirm no horizontal overflow and the selector appears in the hamburger menu.
-- [ ] 3.5 Run a Lighthouse accessibility audit (or inject axe-core) on the home page and verify zero new violations related to the navbar/language selector.
-- [ ] 3.6 Tab through the navbar with keyboard only — verify the dropdown opens with Enter, arrow keys navigate options, Escape closes it.
-- [ ] 3.7 Run the full test suites one final time: `./mvnw test` and `cd e2e-tests && npm test` — confirm all green.
-- [ ] 3.8 Stage all changed/new files and commit with conventional format: `feat: add language selector to header (#1)`. Include the 5 changed/new source files. Do not commit proof screenshots unless the team convention requires it.
+- [x] 3.1 Create the proof artifacts directory: `docs/specs/01-spec-language-selector/01-proofs/`
+- [x] 3.2 Start the application (`./mvnw spring-boot:run`) and capture a screenshot of the home page in English (default state, showing the language selector with "EN" and globe icon). Save to `docs/specs/01-spec-language-selector/01-proofs/home-en.png`.
+- [x] 3.3 Switch to Spanish (`?lang=es`) and capture a screenshot of the home page showing the language selector with "ES" and Spanish nav text. Save to `docs/specs/01-spec-language-selector/01-proofs/home-es.png`.
+- [x] 3.4 Verify the dropdown at 320px viewport width (browser devtools) — confirm no horizontal overflow and the selector appears in the hamburger menu.
+- [x] 3.5 Run a Lighthouse accessibility audit (or inject axe-core) on the home page and verify zero new violations related to the navbar/language selector.
+- [x] 3.6 Tab through the navbar with keyboard only — verify the dropdown opens with Enter, arrow keys navigate options, Escape closes it.
+- [x] 3.7 Run the full test suites one final time: `./mvnw test` and `cd e2e-tests && npm test` — confirm all green.
+- [x] 3.8 Stage all changed/new files and commit with conventional format: `feat: add language selector to header (#1)`. Include the 5 changed/new source files. Do not commit proof screenshots unless the team convention requires it.
