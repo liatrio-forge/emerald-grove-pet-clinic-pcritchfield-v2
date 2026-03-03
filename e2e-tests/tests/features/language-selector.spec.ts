@@ -4,6 +4,11 @@ import { HomePage } from '@pages/home-page';
 
 test.describe('Language Selector', () => {
 
+  test.beforeEach(async ({ page }) => {
+    // Reset locale to English before each test to ensure isolation
+    await page.goto('/?lang=en');
+  });
+
   test('language selector button is visible in the navbar', async ({ page }) => {
     const home = new HomePage(page);
     await home.open();
@@ -62,7 +67,7 @@ test.describe('Language Selector', () => {
     const enItem = page.locator('[data-testid="lang-en"]');
 
     await expect(esItem).toHaveClass(/active/);
-    await expect(esItem).toHaveAttribute('aria-current', 'true');
+    await expect(esItem).toHaveAttribute('aria-current', 'page');
     await expect(enItem).not.toHaveClass(/active/);
   });
 
@@ -71,7 +76,8 @@ test.describe('Language Selector', () => {
     await home.open();
 
     const button = page.locator('[data-testid="language-selector"]');
-    await expect(button).toHaveAttribute('aria-label', /.+/);
+    // Default locale is EN, so aria-label should be the English value "Language"
+    await expect(button).toHaveAttribute('aria-label', 'Language');
   });
 
   test('switching language preserves the current page path', async ({ page }) => {
