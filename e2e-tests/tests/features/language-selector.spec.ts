@@ -88,6 +88,19 @@ test.describe('Language Selector', () => {
 
     await page.waitForURL(/vets/);
     expect(page.url()).toContain('/vets.html');
+    expect(new URL(page.url()).searchParams.get('lang')).toBe('es');
+  });
+
+  test('switching language preserves existing query parameters', async ({ page }) => {
+    await page.goto('/owners?lastName=Davis');
+
+    await page.locator('[data-testid="language-selector"]').click();
+    await page.locator('[data-testid="lang-es"]').click();
+
+    await page.waitForURL(/lang=es/);
+    const url = new URL(page.url());
+    expect(url.searchParams.get('lang')).toBe('es');
+    expect(url.searchParams.get('lastName')).toBe('Davis');
   });
 
 });

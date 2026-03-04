@@ -77,7 +77,7 @@
               <li>
                 <a class="dropdown-item" th:classappend="${#locale.language == 'en'} ? ' active'"
                    th:attr="aria-current=${#locale.language == 'en'} ? 'page' : null"
-                   th:href="@{''(lang='en')}" data-testid="lang-en">
+                   th:href="${langUrlEn}" data-testid="lang-en">
                   <span class="fa fa-check me-2" aria-hidden="true"
                         th:style="${#locale.language == 'en'} ? '' : 'visibility:hidden'"></span>
                   <span th:text="#{nav.language.en}">English</span>
@@ -86,7 +86,7 @@
               <li>
                 <a class="dropdown-item" th:classappend="${#locale.language == 'es'} ? ' active'"
                    th:attr="aria-current=${#locale.language == 'es'} ? 'page' : null"
-                   th:href="@{''(lang='es')}" lang="es" data-testid="lang-es">
+                   th:href="${langUrlEs}" lang="es" data-testid="lang-es">
                   <span class="fa fa-check me-2" aria-hidden="true"
                         th:style="${#locale.language == 'es'} ? '' : 'visibility:hidden'"></span>
                   <span th:text="#{nav.language.es}">Español</span>
@@ -95,7 +95,7 @@
               <li>
                 <a class="dropdown-item" th:classappend="${#locale.language == 'de'} ? ' active'"
                    th:attr="aria-current=${#locale.language == 'de'} ? 'page' : null"
-                   th:href="@{''(lang='de')}" lang="de" data-testid="lang-de">
+                   th:href="${langUrlDe}" lang="de" data-testid="lang-de">
                   <span class="fa fa-check me-2" aria-hidden="true"
                         th:style="${#locale.language == 'de'} ? '' : 'visibility:hidden'"></span>
                   <span th:text="#{nav.language.de}">Deutsch</span>
