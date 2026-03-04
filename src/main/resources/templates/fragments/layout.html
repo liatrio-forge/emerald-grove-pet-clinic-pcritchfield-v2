@@ -65,6 +65,45 @@
             <span th:text="#{error}">Error</span>
           </li>
 
+          <li class="nav-item dropdown ms-2">
+            <button class="btn btn-outline-light dropdown-toggle" type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false" th:aria-label="#{nav.language.selector}"
+                    data-testid="language-selector">
+              <span class="fa fa-globe" aria-hidden="true"></span>
+              <span th:text="${#locale.language.toUpperCase()}">EN</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" th:classappend="${#locale.language == 'en'} ? ' active'"
+                   th:attr="aria-current=${#locale.language == 'en'} ? 'page' : null"
+                   th:href="${langUrlEn}" data-testid="lang-en">
+                  <span class="fa fa-check me-2" aria-hidden="true"
+                        th:style="${#locale.language == 'en'} ? '' : 'visibility:hidden'"></span>
+                  <span th:text="#{nav.language.en}">English</span>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" th:classappend="${#locale.language == 'es'} ? ' active'"
+                   th:attr="aria-current=${#locale.language == 'es'} ? 'page' : null"
+                   th:href="${langUrlEs}" lang="es" data-testid="lang-es">
+                  <span class="fa fa-check me-2" aria-hidden="true"
+                        th:style="${#locale.language == 'es'} ? '' : 'visibility:hidden'"></span>
+                  <span th:text="#{nav.language.es}">Español</span>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" th:classappend="${#locale.language == 'de'} ? ' active'"
+                   th:attr="aria-current=${#locale.language == 'de'} ? 'page' : null"
+                   th:href="${langUrlDe}" lang="de" data-testid="lang-de">
+                  <span class="fa fa-check me-2" aria-hidden="true"
+                        th:style="${#locale.language == 'de'} ? '' : 'visibility:hidden'"></span>
+                  <span th:text="#{nav.language.de}">Deutsch</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
         </ul>
       </div>
     </div>
